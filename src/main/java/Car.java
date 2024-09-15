@@ -1,9 +1,11 @@
 public class Car {
-    String carName; // Название автомобиля
-    int speed; // Скорость автомобиля
+
+    final String carName; // Название автомобиля
+    final int speed; // Скорость автомобиля
 
     Car(String carName, int speed) {
         this.carName = carName;
         this.speed = speed;
     }
+
 }

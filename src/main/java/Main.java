@@ -10,17 +10,23 @@ public class Main {
             int speed;
             while (true) {
                 System.out.println("Введите скорость автомобиля №" + (i + 1) + ":");
-                speed = scanner.nextInt(); // Считываем скорость автомобиля и проверяем на соответствие условию
-                if (speed >= 0 && speed <= 250) {
-                    break;
+                if (scanner.hasNextInt()) { //Проверяем, что введенные данные являются числом и соответствуют условию
+                    speed = scanner.nextInt();
+                    if (speed >= 0 && speed <= 250){
+                        break;
+                    } else {
+                        System.out.println("Неверная скорость");
+                    }
                 } else {
                     System.out.println("Неверная скорость");
+                    scanner.next(); // перевод строки для следующего ввода
                 }
             }
+
             Car newCar = new Car(name, speed); // Создаем автомобиль
             race.setLeaderCar(newCar); // Вызываем метод проверки на лидерство автомобиля
-
         }
-        System.out.println("Автомобиль-победитель: " + race.leaderCarName); // Вывод победителя
+        scanner.close();
+        System.out.println("Автомобиль-победитель: " + race.getLeaderCarName()); // Вывод победителя
     }
 }
