@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        final int MAX_SPEED = 250;
         Scanner scanner = new Scanner(System.in);
         Race race = new Race(); // Начинаем новую гонку
         for (int i = 0; i < 3; i++) {
@@ -12,7 +13,7 @@ public class Main {
                 System.out.println("Введите скорость автомобиля №" + (i + 1) + ":");
                 if (scanner.hasNextInt()) { //Проверяем, что введенные данные являются числом и соответствуют условию
                     speed = scanner.nextInt();
-                    if (speed >= 0 && speed <= 250){
+                    if (speed >= 0 && speed <= MAX_SPEED){
                         break;
                     } else {
                         System.out.println("Неверная скорость");
